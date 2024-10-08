@@ -1,0 +1,6216 @@
+{
+  "IMPORTS": [
+    [
+      "SNMPv2-SMI",
+      [
+        "enterprises",
+        "Integer32"
+      ]
+    ],
+    [
+      "SNMPv2-CONF",
+      [
+        "OBJECT-GROUP",
+        "NOTIFICATION-GROUP",
+        "MODULE-COMPLIANCE"
+      ]
+    ],
+    [
+      "SNMPv2-TC",
+      [
+        "TEXTUAL-CONVENTION",
+        "DisplayString"
+      ]
+    ],
+    [
+      "SNMPv2-SMI",
+      [
+        "OBJECT-TYPE",
+        "MODULE-IDENTITY",
+        "NOTIFICATION-TYPE"
+      ]
+    ]
+  ],
+  "streamlineTapeLibrary": {
+    "tp": "MODULE-IDENTITY",
+    "value": [
+      "enterprises",
+      1211,
+      1,
+      15
+    ]
+  },
+  "storagetek": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "enterprises",
+      1211
+    ]
+  },
+  "products": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "storagetek",
+      1
+    ]
+  },
+  "slSnmpNotifications": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "streamlineTapeLibrary",
+      0
+    ]
+  },
+  "slAgent": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "streamlineTapeLibrary",
+      1
+    ]
+  },
+  "slTrapVarBind": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "streamlineTapeLibrary",
+      2
+    ]
+  },
+  "slLibrary": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "streamlineTapeLibrary",
+      3
+    ]
+  },
+  "slPhysHardware": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "streamlineTapeLibrary",
+      4
+    ]
+  },
+  "slStorage": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "streamlineTapeLibrary",
+      5
+    ]
+  },
+  "slInventory": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "streamlineTapeLibrary",
+      6
+    ]
+  },
+  "slTrapConfigVarBind": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "streamlineTapeLibrary",
+      7
+    ]
+  },
+  "slTrapTestVarBind": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "streamlineTapeLibrary",
+      8
+    ]
+  },
+  "slTbiEventVarBind": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "streamlineTapeLibrary",
+      9
+    ]
+  },
+  "slSvcEventVarBind": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "streamlineTapeLibrary",
+      10
+    ]
+  },
+  "slAsrEventVarBind": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "streamlineTapeLibrary",
+      11
+    ]
+  },
+  "slAsrEventTable": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "streamlineTapeLibrary",
+      12
+    ]
+  },
+  "slConformance": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "streamlineTapeLibrary",
+      13
+    ]
+  },
+  "slCompliances": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "slConformance",
+      1
+    ]
+  },
+  "slGroups": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "slConformance",
+      2
+    ]
+  },
+  "SlLibraryId": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": "d"
+  },
+  "SlLibraryIdMax": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": "d"
+  },
+  "SlComplexId": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": "d"
+  },
+  "SlSnmpPort": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": "d"
+  },
+  "SlSnmpTrapPort": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": "d"
+  },
+  "SlCmdClear": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "noaction",
+        "2": "clear"
+      }
+    },
+    "display_hint": null
+  },
+  "SlDeviceStatus": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "ok",
+        "1": "error",
+        "2": "warning",
+        "3": "info",
+        "4": "trace"
+      }
+    },
+    "display_hint": null
+  },
+  "SlLibraryCondition": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "normal",
+        "1": "degraded",
+        "2": "notoperative"
+      }
+    },
+    "display_hint": null
+  },
+  "SlMediaEventType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "load",
+        "2": "unload",
+        "3": "error",
+        "4": "loadRetry",
+        "5": "driveError",
+        "6": "mediaEndOfLife",
+        "7": "driveEndOfLife",
+        "8": "decryptionError",
+        "9": "unknown"
+      }
+    },
+    "display_hint": null
+  },
+  "SlHaState": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "simplex",
+        "1": "duplex",
+        "2": "nonRE"
+      }
+    },
+    "display_hint": null
+  },
+  "SlHaId": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "active",
+        "1": "standby",
+        "2": "nonRE"
+      }
+    },
+    "display_hint": null
+  },
+  "SlHaSlot": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "sideA",
+        "1": "sideB",
+        "2": "nonRE"
+      }
+    },
+    "display_hint": null
+  },
+  "SlDriveFibreLoopId": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": "d"
+  },
+  "SlDriveFibreSpeed": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "auto",
+        "1": "fc1Gb",
+        "2": "fc2Gb",
+        "3": "fc4Gb",
+        "4": "fc8Gb",
+        "5": "fc10Gb",
+        "6": "rsvd6",
+        "7": "rsvd7",
+        "8": "sas1p5Gb",
+        "9": "sas3Gb",
+        "10": "sas6Gb",
+        "11": "rsvdB",
+        "12": "rsvdC",
+        "13": "fc16Gb"
+      }
+    },
+    "display_hint": null
+  },
+  "SlDriveFibreAddressing": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "hard",
+        "2": "soft"
+      }
+    },
+    "display_hint": null
+  },
+  "SlDriveStatus": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "unknown",
+        "1": "initializing",
+        "2": "empty",
+        "3": "cartridgePresent",
+        "4": "loading",
+        "5": "loaded",
+        "6": "cleaning",
+        "7": "rewinding",
+        "8": "unloading",
+        "9": "inoperative",
+        "10": "notLoadable",
+        "11": "notUnloadable"
+      }
+    },
+    "display_hint": null
+  },
+  "SlPartitionType": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "hli",
+        "2": "scsi",
+        "3": "other"
+      }
+    },
+    "display_hint": null
+  },
+  "SlCellHostTypeTC": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "invalid",
+        "1": "storage",
+        "2": "drive",
+        "3": "cap",
+        "4": "playground",
+        "5": "intransit",
+        "6": "ptp",
+        "7": "hand"
+      }
+    },
+    "display_hint": null
+  },
+  "SlSeverityTC": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "ok",
+        "1": "heartbeat",
+        "2": "telemetry",
+        "3": "config",
+        "4": "trace",
+        "5": "info",
+        "6": "warn",
+        "7": "error",
+        "8": "critical",
+        "9": "fatal",
+        "10": "other"
+      }
+    },
+    "display_hint": null
+  },
+  "SlDiagEntityTC": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "faultMgr",
+        "2": "library",
+        "3": "system",
+        "4": "primitive",
+        "5": "other"
+      }
+    },
+    "display_hint": null
+  },
+  "SlFaultTypeTC": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "heartbeat",
+        "1": "recovery",
+        "2": "suspicious",
+        "3": "routine",
+        "4": "escalated",
+        "5": "critical",
+        "6": "alert",
+        "7": "dire",
+        "8": "emergency"
+      }
+    },
+    "display_hint": null
+  },
+  "SlCountTC": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "display_hint": "d"
+  },
+  "SlFruStatusTC": {
+    "tp": "TEXTUAL-CONVENTION",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "other",
+        "2": "suspected",
+        "3": "faulted",
+        "4": "repaired",
+        "5": "replaced",
+        "6": "acquitted"
+      }
+    },
+    "display_hint": null
+  },
+  "slAgentRevision": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slAgent",
+      1
+    ]
+  },
+  "slAgentLibStatusAtStartup": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlLibraryCondition"
+    },
+    "index": null,
+    "value": [
+      "slAgent",
+      2
+    ]
+  },
+  "slAgentBootDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slAgent",
+      3
+    ]
+  },
+  "slAgentURL": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slAgent",
+      4
+    ]
+  },
+  "slAgentTrapPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlSnmpTrapPort"
+    },
+    "index": null,
+    "value": [
+      "slAgent",
+      5
+    ]
+  },
+  "slAgentPort": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlSnmpPort"
+    },
+    "index": null,
+    "value": [
+      "slAgent",
+      6
+    ]
+  },
+  "slAgentCommunity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slAgent",
+      7
+    ]
+  },
+  "slAgentTrapRecipientV2": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "slAgent",
+      8
+    ]
+  },
+  "slAgentTrapRecipientV2ClearAll": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlCmdClear"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV2",
+      1
+    ]
+  },
+  "slAgentTrapRecipientV2Count": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV2",
+      2
+    ]
+  },
+  "slAgentTrapRecipientV2Table": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLAgentTrapRecipientV2Entry"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV2",
+      3
+    ]
+  },
+  "slAgentTrapRecipientV2Entry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLAgentTrapRecipientV2Entry"
+    },
+    "index": [
+      "slAgentTrapRecipientV2TableIndex"
+    ],
+    "value": [
+      "slAgentTrapRecipientV2Table",
+      1
+    ]
+  },
+  "SLAgentTrapRecipientV2Entry": {
+    "tp": "SEQUENCE"
+  },
+  "slAgentTrapRecipientV2TableIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV2Entry",
+      1
+    ]
+  },
+  "slAgentTrapRecipientV2Filter": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV2Entry",
+      2
+    ]
+  },
+  "slAgentTrapRecipientV2Host": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV2Entry",
+      3
+    ]
+  },
+  "slAgentTrapRecipientV2Port": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV2Entry",
+      4
+    ]
+  },
+  "slAgentTrapRecipientV2Community": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV2Entry",
+      5
+    ]
+  },
+  "slAgentTrapRecipientV2ClearEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlCmdClear"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV2Entry",
+      6
+    ]
+  },
+  "slAgentTrapRecipientV3": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "slAgent",
+      9
+    ]
+  },
+  "slAgentTrapRecipientV3ClearAll": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlCmdClear"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV3",
+      1
+    ]
+  },
+  "slAgentTrapRecipientV3Count": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV3",
+      2
+    ]
+  },
+  "slAgentTrapRecipientV3Table": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLAgentTrapRecipientV3Entry"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV3",
+      3
+    ]
+  },
+  "slAgentTrapRecipientV3Entry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLAgentTrapRecipientV3Entry"
+    },
+    "index": [
+      "slAgentTrapRecipientV3TableIndex"
+    ],
+    "value": [
+      "slAgentTrapRecipientV3Table",
+      1
+    ]
+  },
+  "SLAgentTrapRecipientV3Entry": {
+    "tp": "SEQUENCE"
+  },
+  "slAgentTrapRecipientV3TableIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV3Entry",
+      1
+    ]
+  },
+  "slAgentTrapRecipientV3Filter": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV3Entry",
+      2
+    ]
+  },
+  "slAgentTrapRecipientV3Host": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV3Entry",
+      3
+    ]
+  },
+  "slAgentTrapRecipientV3Port": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV3Entry",
+      4
+    ]
+  },
+  "slAgentTrapRecipientV3SecLevel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV3Entry",
+      5
+    ]
+  },
+  "slAgentTrapRecipientV3Auth": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV3Entry",
+      6
+    ]
+  },
+  "slAgentTrapRecipientV3AuthPass": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV3Entry",
+      7
+    ]
+  },
+  "slAgentTrapRecipientV3Priv": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV3Entry",
+      8
+    ]
+  },
+  "slAgentTrapRecipientV3PrivPass": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV3Entry",
+      9
+    ]
+  },
+  "slAgentTrapRecipientV3RemoteId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV3Entry",
+      10
+    ]
+  },
+  "slAgentTrapRecipientV3ClearEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlCmdClear"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapRecipientV3Entry",
+      11
+    ]
+  },
+  "slAgentTrapTest": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "slAgent",
+      10
+    ]
+  },
+  "slAgentTrapTestLevel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapTest",
+      1
+    ]
+  },
+  "slAgentTrapTestCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slAgentTrapTest",
+      2
+    ]
+  },
+  "slAgentHaState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlHaState"
+    },
+    "index": null,
+    "value": [
+      "slAgent",
+      11
+    ]
+  },
+  "slAgentHaId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlHaId"
+    },
+    "index": null,
+    "value": [
+      "slAgent",
+      12
+    ]
+  },
+  "slAgentHaSlot": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlHaSlot"
+    },
+    "index": null,
+    "value": [
+      "slAgent",
+      13
+    ]
+  },
+  "slAgentHaAlternateIp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slAgent",
+      14
+    ]
+  },
+  "slTrapLibrarySerialNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapVarBind",
+      1
+    ]
+  },
+  "slTrapDeviceId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapVarBind",
+      2
+    ]
+  },
+  "slTrapDeviceTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapVarBind",
+      3
+    ]
+  },
+  "slTrapDeviceAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapVarBind",
+      4
+    ]
+  },
+  "slTrapDeviceUserName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapVarBind",
+      5
+    ]
+  },
+  "slTrapDeviceInterfaceName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapVarBind",
+      6
+    ]
+  },
+  "slTrapDeviceActivity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapVarBind",
+      7
+    ]
+  },
+  "slTrapDeviceRequestId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapVarBind",
+      8
+    ]
+  },
+  "slTrapDeviceSeverity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapVarBind",
+      9
+    ]
+  },
+  "slTrapDeviceResultCode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapVarBind",
+      10
+    ]
+  },
+  "slTrapDevicePropertyName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapVarBind",
+      11
+    ]
+  },
+  "slTrapDeviceNewPropertyValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapVarBind",
+      12
+    ]
+  },
+  "slTrapDeviceFreeFormText": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapVarBind",
+      13
+    ]
+  },
+  "slTrapConfigLibrarySerialNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapConfigVarBind",
+      1
+    ]
+  },
+  "slTrapConfigDeviceId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapConfigVarBind",
+      2
+    ]
+  },
+  "slTrapConfigDeviceTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapConfigVarBind",
+      3
+    ]
+  },
+  "slTrapConfigDeviceAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapConfigVarBind",
+      4
+    ]
+  },
+  "slTrapConfigDeviceUserName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapConfigVarBind",
+      5
+    ]
+  },
+  "slTrapConfigDeviceInterfaceName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapConfigVarBind",
+      6
+    ]
+  },
+  "slTrapConfigDeviceActivity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapConfigVarBind",
+      7
+    ]
+  },
+  "slTrapConfigDeviceRequestId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapConfigVarBind",
+      8
+    ]
+  },
+  "slTrapConfigDeviceSeverity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapConfigVarBind",
+      9
+    ]
+  },
+  "slTrapConfigDeviceResultCode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapConfigVarBind",
+      10
+    ]
+  },
+  "slTrapConfigPropertyName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapConfigVarBind",
+      11
+    ]
+  },
+  "slTrapConfigNewPropertyValue": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapConfigVarBind",
+      12
+    ]
+  },
+  "slTrapConfigNewPropertyEffective": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapConfigVarBind",
+      13
+    ]
+  },
+  "slTrapCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlCountTC"
+    },
+    "index": null,
+    "value": [
+      "slTrapTestVarBind",
+      1
+    ]
+  },
+  "slTrapLibBootDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapTestVarBind",
+      2
+    ]
+  },
+  "slTrapLibDateString": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapTestVarBind",
+      3
+    ]
+  },
+  "slTrapLibSerialNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapTestVarBind",
+      4
+    ]
+  },
+  "slTrapLibTopLevelCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlLibraryCondition"
+    },
+    "index": null,
+    "value": [
+      "slTrapTestVarBind",
+      5
+    ]
+  },
+  "slTrapHaState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlHaState"
+    },
+    "index": null,
+    "value": [
+      "slTrapTestVarBind",
+      6
+    ]
+  },
+  "slTrapHaId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlHaId"
+    },
+    "index": null,
+    "value": [
+      "slTrapTestVarBind",
+      7
+    ]
+  },
+  "slTrapHaSlot": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlHaSlot"
+    },
+    "index": null,
+    "value": [
+      "slTrapTestVarBind",
+      8
+    ]
+  },
+  "slTrapHaAlternateIp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTrapTestVarBind",
+      9
+    ]
+  },
+  "slTrapSvcEventTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "slSvcEventVarBind",
+      1
+    ]
+  },
+  "slTrapSvcLibProductManufacturer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "slSvcEventVarBind",
+      2
+    ]
+  },
+  "slTrapSvcLibProductName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "slSvcEventVarBind",
+      3
+    ]
+  },
+  "slTrapSvcLibProductSn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "slSvcEventVarBind",
+      4
+    ]
+  },
+  "slTrapSvcLibStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlLibraryCondition"
+    },
+    "index": null,
+    "value": [
+      "slSvcEventVarBind",
+      5
+    ]
+  },
+  "slTrapSvcLibEntity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDiagEntityTC"
+    },
+    "index": null,
+    "value": [
+      "slSvcEventVarBind",
+      6
+    ]
+  },
+  "slTrapSvcLibEventId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "slSvcEventVarBind",
+      7
+    ]
+  },
+  "slTrapSvcFaultEventUUID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "slSvcEventVarBind",
+      8
+    ]
+  },
+  "slTrapSvcFaultEventType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlFaultTypeTC"
+    },
+    "index": null,
+    "value": [
+      "slSvcEventVarBind",
+      9
+    ]
+  },
+  "slTrapSvcFaultEventCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlCountTC"
+    },
+    "index": null,
+    "value": [
+      "slSvcEventVarBind",
+      10
+    ]
+  },
+  "slTrapSvcFaultEventDescription": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "slSvcEventVarBind",
+      11
+    ]
+  },
+  "slTrapSvcDeviceEventSeverity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlSeverityTC"
+    },
+    "index": null,
+    "value": [
+      "slSvcEventVarBind",
+      12
+    ]
+  },
+  "slTrapSvcDeviceEventActivity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "slSvcEventVarBind",
+      13
+    ]
+  },
+  "slTrapSvcDeviceEventOpCode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "slSvcEventVarBind",
+      14
+    ]
+  },
+  "slTrapSvcDeviceEventResultCode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "slSvcEventVarBind",
+      15
+    ]
+  },
+  "slTrapSvcServiceData": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "slSvcEventVarBind",
+      16
+    ]
+  },
+  "slTrapSvcLocalization": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "slSvcEventVarBind",
+      17
+    ]
+  },
+  "slTrapAsrSuspectCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slAsrEventVarBind",
+      18
+    ]
+  },
+  "slTrapAsrSuspectTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SlTrapAsrSuspectEntry"
+    },
+    "index": null,
+    "value": [
+      "slAsrEventTable",
+      1
+    ]
+  },
+  "slTrapAsrSuspectEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlTrapAsrSuspectEntry"
+    },
+    "index": [
+      "slTrapAsrSuspectIndex"
+    ],
+    "value": [
+      "slTrapAsrSuspectTable",
+      1
+    ]
+  },
+  "SlTrapAsrSuspectEntry": {
+    "tp": "SEQUENCE"
+  },
+  "slTrapAsrSuspectIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slTrapAsrSuspectEntry",
+      1
+    ]
+  },
+  "slTrapAsrSuspectFaultCertainty": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slTrapAsrSuspectEntry",
+      2
+    ]
+  },
+  "slTrapAsrSuspectDeviceAddress": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "slTrapAsrSuspectEntry",
+      3
+    ]
+  },
+  "slTrapAsrSuspectFruName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "slTrapAsrSuspectEntry",
+      4
+    ]
+  },
+  "slTrapAsrSuspectFruChassisId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "slTrapAsrSuspectEntry",
+      5
+    ]
+  },
+  "slTrapAsrSuspectFruManufacturer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "slTrapAsrSuspectEntry",
+      6
+    ]
+  },
+  "slTrapAsrSuspectFruPn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "slTrapAsrSuspectEntry",
+      7
+    ]
+  },
+  "slTrapAsrSuspectFruSn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "slTrapAsrSuspectEntry",
+      8
+    ]
+  },
+  "slTrapAsrSuspectFruRevision": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "slTrapAsrSuspectEntry",
+      9
+    ]
+  },
+  "slTrapAsrSuspectFruReserved": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "DisplayString"
+    },
+    "index": null,
+    "value": [
+      "slTrapAsrSuspectEntry",
+      10
+    ]
+  },
+  "slTrapAsrSuspectFruStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlFruStatusTC"
+    },
+    "index": null,
+    "value": [
+      "slTrapAsrSuspectEntry",
+      11
+    ]
+  },
+  "slTbiEventData": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTbiEventVarBind",
+      1
+    ]
+  },
+  "slLibStkBaseModel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibrary",
+      1
+    ]
+  },
+  "slLibSerialNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibrary",
+      2
+    ]
+  },
+  "slLibWWNNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibrary",
+      3
+    ]
+  },
+  "slLibraryTopLevelCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlLibraryCondition"
+    },
+    "index": null,
+    "value": [
+      "slLibrary",
+      4
+    ]
+  },
+  "slLibraryState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "online",
+        "2": "offline"
+      }
+    },
+    "index": null,
+    "value": [
+      "slLibrary",
+      5
+    ]
+  },
+  "slLibVersion": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "slLibrary",
+      7
+    ]
+  },
+  "slLibVersionFirmRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibVersion",
+      1
+    ]
+  },
+  "slLibVersionFirmDate": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibVersion",
+      2
+    ]
+  },
+  "slLibVersionBootRev": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibVersion",
+      3
+    ]
+  },
+  "slLibVersionHardware": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibVersion",
+      4
+    ]
+  },
+  "slLibLSMConfig": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "slLibrary",
+      8
+    ]
+  },
+  "slLibLSMConfigCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfig",
+      1
+    ]
+  },
+  "slLibLSMConfigTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLLibLSMConfigEntry"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfig",
+      2
+    ]
+  },
+  "slLibLSMConfigEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLLibLSMConfigEntry"
+    },
+    "index": [
+      "slLibLSMConfigIndex"
+    ],
+    "value": [
+      "slLibLSMConfigTable",
+      1
+    ]
+  },
+  "SLLibLSMConfigEntry": {
+    "tp": "SEQUENCE"
+  },
+  "slLibLSMConfigIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      1
+    ]
+  },
+  "slLibLSMConfigNumPanels": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      2
+    ]
+  },
+  "slLibLSMConfigNumHandCells": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      3
+    ]
+  },
+  "slLibLSMConfigMinHandAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      4
+    ]
+  },
+  "slLibLSMConfigMaxHandAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      5
+    ]
+  },
+  "slLibLSMConfigNumSystemCells": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      6
+    ]
+  },
+  "slLibLSMConfigNumRestrictedCells": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      7
+    ]
+  },
+  "slLibLSMConfigMinSystemAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      8
+    ]
+  },
+  "slLibLSMConfigMaxSystemAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      9
+    ]
+  },
+  "slLibLSMConfigNumCaps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      10
+    ]
+  },
+  "slLibLSMConfigNumCapColumns": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      11
+    ]
+  },
+  "slLibLSMConfigNumCapCells": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      12
+    ]
+  },
+  "slLibLSMConfigMinCapAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      13
+    ]
+  },
+  "slLibLSMConfigMaxCapAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      14
+    ]
+  },
+  "slLibLSMConfigNumDriveColumns": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      15
+    ]
+  },
+  "slLibLSMConfigNumDrives": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      16
+    ]
+  },
+  "slLibLSMConfigMinDriveAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      17
+    ]
+  },
+  "slLibLSMConfigMaxDriveAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      18
+    ]
+  },
+  "slLibLSMConfigNumStorageCells": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      19
+    ]
+  },
+  "slLibLSMConfigMinStorageAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      20
+    ]
+  },
+  "slLibLSMConfigMaxStorageAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      21
+    ]
+  },
+  "slLibLSMConfigNumPtps": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      22
+    ]
+  },
+  "slLibLSMConfigNumPtpColumns": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      23
+    ]
+  },
+  "slLibLSMConfigNumPtpCells": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      24
+    ]
+  },
+  "slLibLSMConfigMinPtpAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      25
+    ]
+  },
+  "slLibLSMConfigMaxPtpAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMConfigEntry",
+      26
+    ]
+  },
+  "slLibLSMState": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "slLibrary",
+      9
+    ]
+  },
+  "slLibLSMCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMState",
+      1
+    ]
+  },
+  "slLibLSMStateTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLLibLSMStateEntry"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMState",
+      2
+    ]
+  },
+  "slLibLSMStateEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLLibLSMStateEntry"
+    },
+    "index": [
+      "slLibLSMStateIndex"
+    ],
+    "value": [
+      "slLibLSMStateTable",
+      1
+    ]
+  },
+  "SLLibLSMStateEntry": {
+    "tp": "SEQUENCE"
+  },
+  "slLibLSMStateIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMStateEntry",
+      1
+    ]
+  },
+  "slLibLSMStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMStateEntry",
+      2
+    ]
+  },
+  "slLibLSMStatusEnum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibLSMStateEntry",
+      3
+    ]
+  },
+  "slLibLocation": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "slLibrary",
+      10
+    ]
+  },
+  "slLibLocatContact": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibLocation",
+      1
+    ]
+  },
+  "slLibLocatStreet": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibLocation",
+      2
+    ]
+  },
+  "slLibLocatState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibLocation",
+      3
+    ]
+  },
+  "slLibLocatZip": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibLocation",
+      4
+    ]
+  },
+  "slLibLocatCountry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibLocation",
+      5
+    ]
+  },
+  "slLibLocatDescr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibLocation",
+      6
+    ]
+  },
+  "slLibLocatCity": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibLocation",
+      7
+    ]
+  },
+  "slLibNetwork": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "slLibrary",
+      11
+    ]
+  },
+  "slLibNetworkCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibNetwork",
+      1
+    ]
+  },
+  "slLibNetworkTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLLibNetworkEntry"
+    },
+    "index": null,
+    "value": [
+      "slLibNetwork",
+      2
+    ]
+  },
+  "slLibNetworkEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLLibNetworkEntry"
+    },
+    "index": [
+      "slLibNetworkIndex"
+    ],
+    "value": [
+      "slLibNetworkTable",
+      1
+    ]
+  },
+  "SLLibNetworkEntry": {
+    "tp": "SEQUENCE"
+  },
+  "slLibNetworkIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibNetworkEntry",
+      1
+    ]
+  },
+  "slLibNetworkInterfaceName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibNetworkEntry",
+      2
+    ]
+  },
+  "slLibNetworkIpAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibNetworkEntry",
+      3
+    ]
+  },
+  "slLibNetworkGateway": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibNetworkEntry",
+      4
+    ]
+  },
+  "slLibNetworkEthAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibNetworkEntry",
+      5
+    ]
+  },
+  "slLibNetworkName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibNetworkEntry",
+      6
+    ]
+  },
+  "slLibNetworkNetmask": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibNetworkEntry",
+      7
+    ]
+  },
+  "slLibNetworkDhcpEnabled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "disabled",
+        "2": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "slLibNetworkEntry",
+      8
+    ]
+  },
+  "slLibNetworkDomainName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibNetworkEntry",
+      9
+    ]
+  },
+  "slLibNetworkPrimaryDNS": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibNetworkEntry",
+      10
+    ]
+  },
+  "slLibNetworkSecondaryDNS": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibNetworkEntry",
+      11
+    ]
+  },
+  "slLibNetworkRXPackets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibNetworkEntry",
+      12
+    ]
+  },
+  "slLibNetworkTXPackets": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibNetworkEntry",
+      13
+    ]
+  },
+  "slLibNetworkErrors": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibNetworkEntry",
+      14
+    ]
+  },
+  "slLibNetworkDropped": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibNetworkEntry",
+      15
+    ]
+  },
+  "slLibNetworkOverruns": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibNetworkEntry",
+      16
+    ]
+  },
+  "slLibNetworkFrame": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibNetworkEntry",
+      17
+    ]
+  },
+  "slLibNetworkCollisions": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibNetworkEntry",
+      18
+    ]
+  },
+  "slLibStatistics": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "slLibrary",
+      12
+    ]
+  },
+  "slLibStatsNumBoots": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibStatistics",
+      1
+    ]
+  },
+  "slLibStatsNumDoorOpens": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibStatistics",
+      2
+    ]
+  },
+  "slLibStatsNumGetRetries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibStatistics",
+      3
+    ]
+  },
+  "slLibStatsNumGetFails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibStatistics",
+      4
+    ]
+  },
+  "slLibStatsNumPutRetries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibStatistics",
+      5
+    ]
+  },
+  "slLibStatsNumPutFails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibStatistics",
+      6
+    ]
+  },
+  "slLibStatsNumLabelRetries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibStatistics",
+      7
+    ]
+  },
+  "slLibStatsNumLabelFails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibStatistics",
+      8
+    ]
+  },
+  "slLibStatsNumTargetRetries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibStatistics",
+      9
+    ]
+  },
+  "slLibStatsNumTargetFails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibStatistics",
+      10
+    ]
+  },
+  "slLibStatsNumMoves": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibStatistics",
+      11
+    ]
+  },
+  "slLibStatsNumMounts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibStatistics",
+      12
+    ]
+  },
+  "slLibStatsNumTargetReads": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibStatistics",
+      13
+    ]
+  },
+  "slLibStatsNumEmptyReads": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibStatistics",
+      14
+    ]
+  },
+  "slLibStatsNumLabelReads": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibStatistics",
+      15
+    ]
+  },
+  "slLibStatsGetTotals": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibStatistics",
+      16
+    ]
+  },
+  "slLibStatsPutTotals": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibStatistics",
+      17
+    ]
+  },
+  "slLibStatsCumMachUptime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibStatistics",
+      18
+    ]
+  },
+  "slLibStatsUpTimeSinceLastBoot": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibStatistics",
+      19
+    ]
+  },
+  "slLibMediaEvents": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "slLibStatistics",
+      20
+    ]
+  },
+  "slLibMediaEventCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibMediaEvents",
+      1
+    ]
+  },
+  "slLibMediaEventTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLLibMediaEventEntry"
+    },
+    "index": null,
+    "value": [
+      "slLibMediaEvents",
+      2
+    ]
+  },
+  "slLibMediaEventEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLLibMediaEventEntry"
+    },
+    "index": [
+      "slLibMediaEventIndex"
+    ],
+    "value": [
+      "slLibMediaEventTable",
+      1
+    ]
+  },
+  "SLLibMediaEventEntry": {
+    "tp": "SEQUENCE"
+  },
+  "slLibMediaEventIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibMediaEventEntry",
+      1
+    ]
+  },
+  "slLibMediaEventMediaVolid": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibMediaEventEntry",
+      2
+    ]
+  },
+  "slLibMediaEventMediaDomain": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibMediaEventEntry",
+      3
+    ]
+  },
+  "slLibMediaEventMediaType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibMediaEventEntry",
+      4
+    ]
+  },
+  "slLibMediaEventDriveSerialNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibMediaEventEntry",
+      5
+    ]
+  },
+  "slLibMediaEventDriveType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibMediaEventEntry",
+      6
+    ]
+  },
+  "slLibMediaEventDateTime": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibMediaEventEntry",
+      7
+    ]
+  },
+  "slLibMediaEventEnum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlMediaEventType"
+    },
+    "index": null,
+    "value": [
+      "slLibMediaEventEntry",
+      8
+    ]
+  },
+  "slLibMediaEventOccurrenceCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibMediaEventEntry",
+      9
+    ]
+  },
+  "slLibDate": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "slLibrary",
+      13
+    ]
+  },
+  "slLibDateString": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibDate",
+      1
+    ]
+  },
+  "slLibCleaning": {
+    "tp": "OBJECT IDENTIFIER",
+    "value": [
+      "slLibrary",
+      14
+    ]
+  },
+  "slLibCleanEnabled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "disabled",
+        "2": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "slLibCleaning",
+      1
+    ]
+  },
+  "slLibCleanNumCartTypes": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibCleaning",
+      2
+    ]
+  },
+  "slLibCleanWarnTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLLibCleanWarnEntry"
+    },
+    "index": null,
+    "value": [
+      "slLibCleaning",
+      3
+    ]
+  },
+  "slLibCleanWarnEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLLibCleanWarnEntry"
+    },
+    "index": [
+      "slLibCleanWarnIndex"
+    ],
+    "value": [
+      "slLibCleanWarnTable",
+      1
+    ]
+  },
+  "SLLibCleanWarnEntry": {
+    "tp": "SEQUENCE"
+  },
+  "slLibCleanWarnIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibCleanWarnEntry",
+      1
+    ]
+  },
+  "slLibCleanWarnCartType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibCleanWarnEntry",
+      2
+    ]
+  },
+  "slLibCleanWarnCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibCleanWarnEntry",
+      3
+    ]
+  },
+  "slLibCleanNumCarts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibCleaning",
+      4
+    ]
+  },
+  "slLibCleanCartTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLLibCleanCartEntry"
+    },
+    "index": null,
+    "value": [
+      "slLibCleaning",
+      5
+    ]
+  },
+  "slLibCleanCartEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLLibCleanCartEntry"
+    },
+    "index": [
+      "slLibCleanCartIndex"
+    ],
+    "value": [
+      "slLibCleanCartTable",
+      1
+    ]
+  },
+  "SLLibCleanCartEntry": {
+    "tp": "SEQUENCE"
+  },
+  "slLibCleanCartIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibCleanCartEntry",
+      1
+    ]
+  },
+  "slLibCleanCartLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibCleanCartEntry",
+      2
+    ]
+  },
+  "slLibCleanCartType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibCleanCartEntry",
+      3
+    ]
+  },
+  "slLibCleanCartLocationElementID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibCleanCartEntry",
+      4
+    ]
+  },
+  "slLibCleanCartHostAccessible": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "true",
+        "2": "false"
+      }
+    },
+    "index": null,
+    "value": [
+      "slLibCleanCartEntry",
+      5
+    ]
+  },
+  "slLibCleanCartUsageCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slLibCleanCartEntry",
+      6
+    ]
+  },
+  "slLibLibraryId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlLibraryId"
+    },
+    "index": null,
+    "value": [
+      "slLibrary",
+      15
+    ]
+  },
+  "slLibLibraryIdMax": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlLibraryIdMax"
+    },
+    "index": null,
+    "value": [
+      "slLibrary",
+      16
+    ]
+  },
+  "slLibComplexId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlComplexId"
+    },
+    "index": null,
+    "value": [
+      "slLibrary",
+      17
+    ]
+  },
+  "slLibMibVer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slLibrary",
+      18
+    ]
+  },
+  "slHostInterfaceCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      1
+    ]
+  },
+  "slHostInterfaceTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLHostInterfaceEntry"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      2
+    ]
+  },
+  "slHostInterfaceEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLHostInterfaceEntry"
+    },
+    "index": [
+      "slHostInterfaceIndex"
+    ],
+    "value": [
+      "slHostInterfaceTable",
+      1
+    ]
+  },
+  "SLHostInterfaceEntry": {
+    "tp": "SEQUENCE"
+  },
+  "slHostInterfaceIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      1
+    ]
+  },
+  "slHostInterfaceFibreCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "single",
+        "2": "dual"
+      }
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      2
+    ]
+  },
+  "slHostInterfaceAWWN": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      3
+    ]
+  },
+  "slHostInterfaceA1AddressingMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDriveFibreAddressing"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      4
+    ]
+  },
+  "slHostInterfaceA1PortEnabled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "disabled",
+        "2": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      5
+    ]
+  },
+  "slHostInterfaceA1LoopId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDriveFibreLoopId"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      6
+    ]
+  },
+  "slHostInterfaceA1PortSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDriveFibreSpeed"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      7
+    ]
+  },
+  "slHostInterfaceA2AddressingMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDriveFibreAddressing"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      8
+    ]
+  },
+  "slHostInterfaceA2PortEnabled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "disabled",
+        "2": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      9
+    ]
+  },
+  "slHostInterfaceA2LoopId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDriveFibreLoopId"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      10
+    ]
+  },
+  "slHostInterfaceA2PortSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDriveFibreSpeed"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      11
+    ]
+  },
+  "slHostInterfaceBWWN": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      12
+    ]
+  },
+  "slHostInterfaceB1AddressingMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDriveFibreAddressing"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      13
+    ]
+  },
+  "slHostInterfaceB1PortEnabled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "disabled",
+        "2": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      14
+    ]
+  },
+  "slHostInterfaceB1LoopId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDriveFibreLoopId"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      15
+    ]
+  },
+  "slHostInterfaceB1PortSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDriveFibreSpeed"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      16
+    ]
+  },
+  "slHostInterfaceB2AddressingMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDriveFibreAddressing"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      17
+    ]
+  },
+  "slHostInterfaceB2PortEnabled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "disabled",
+        "2": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      18
+    ]
+  },
+  "slHostInterfaceB2LoopId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDriveFibreLoopId"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      19
+    ]
+  },
+  "slHostInterfaceB2PortSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDriveFibreSpeed"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      20
+    ]
+  },
+  "slHostInterfaceElementID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      21
+    ]
+  },
+  "slHostInterfaceSerialNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      22
+    ]
+  },
+  "slHostInterfaceStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDeviceStatus"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      23
+    ]
+  },
+  "slHostInterfaceFaultLED": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      24
+    ]
+  },
+  "slHostInterfaceSafeToRemoveLED": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      25
+    ]
+  },
+  "slHostInterfaceStatusEnum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDeviceStatus"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      26
+    ]
+  },
+  "slHostInterfaceCodeVer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      27
+    ]
+  },
+  "slHostInterfaceVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      28
+    ]
+  },
+  "slHostInterfaceFirmwareVer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slHostInterfaceEntry",
+      29
+    ]
+  },
+  "slTempSensorCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      3
+    ]
+  },
+  "slTempSensorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLTempSensorEntry"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      4
+    ]
+  },
+  "slTempSensorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLTempSensorEntry"
+    },
+    "index": [
+      "slTempSensorIndex"
+    ],
+    "value": [
+      "slTempSensorTable",
+      1
+    ]
+  },
+  "SLTempSensorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "slTempSensorIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slTempSensorEntry",
+      1
+    ]
+  },
+  "slTempSensorName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTempSensorEntry",
+      2
+    ]
+  },
+  "slTempSensorCurrentTemp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slTempSensorEntry",
+      3
+    ]
+  },
+  "slTempSensorHighTemp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slTempSensorEntry",
+      4
+    ]
+  },
+  "slTempSensorWarnThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slTempSensorEntry",
+      5
+    ]
+  },
+  "slTempSensorFailThreshold": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slTempSensorEntry",
+      6
+    ]
+  },
+  "slFanCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      5
+    ]
+  },
+  "slFanTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLFanEntry"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      6
+    ]
+  },
+  "slFanEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLFanEntry"
+    },
+    "index": [
+      "slFanIndex"
+    ],
+    "value": [
+      "slFanTable",
+      1
+    ]
+  },
+  "SLFanEntry": {
+    "tp": "SEQUENCE"
+  },
+  "slFanIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slFanEntry",
+      1
+    ]
+  },
+  "slFanName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slFanEntry",
+      2
+    ]
+  },
+  "slFanOperational": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "failed",
+        "2": "normal"
+      }
+    },
+    "index": null,
+    "value": [
+      "slFanEntry",
+      3
+    ]
+  },
+  "slPowerSupplyCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      7
+    ]
+  },
+  "slPowerSupplyTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLPowerSupplyEntry"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      8
+    ]
+  },
+  "slPowerSupplyEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLPowerSupplyEntry"
+    },
+    "index": [
+      "slPowerSupplyIndex"
+    ],
+    "value": [
+      "slPowerSupplyTable",
+      1
+    ]
+  },
+  "SLPowerSupplyEntry": {
+    "tp": "SEQUENCE"
+  },
+  "slPowerSupplyIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPowerSupplyEntry",
+      1
+    ]
+  },
+  "slPowerSupplyName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slPowerSupplyEntry",
+      2
+    ]
+  },
+  "slPowerSupplyInstalled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "notinstalled",
+        "2": "installed"
+      }
+    },
+    "index": null,
+    "value": [
+      "slPowerSupplyEntry",
+      3
+    ]
+  },
+  "slPowerSupplyOperational": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "failed",
+        "2": "normal"
+      }
+    },
+    "index": null,
+    "value": [
+      "slPowerSupplyEntry",
+      4
+    ]
+  },
+  "slRobotCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      9
+    ]
+  },
+  "slRobotTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLRobotEntry"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      10
+    ]
+  },
+  "slRobotEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLRobotEntry"
+    },
+    "index": [
+      "slRobotIndex"
+    ],
+    "value": [
+      "slRobotTable",
+      1
+    ]
+  },
+  "SLRobotEntry": {
+    "tp": "SEQUENCE"
+  },
+  "slRobotIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slRobotEntry",
+      1
+    ]
+  },
+  "slRobotPhysicalAddressStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slRobotEntry",
+      2
+    ]
+  },
+  "slRobotPosition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slRobotEntry",
+      3
+    ]
+  },
+  "slRobotHandCartStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slRobotEntry",
+      4
+    ]
+  },
+  "slRobotSerialNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slRobotEntry",
+      5
+    ]
+  },
+  "slRobotState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slRobotEntry",
+      6
+    ]
+  },
+  "slRobotFaultLED": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slRobotEntry",
+      7
+    ]
+  },
+  "slRobotStatusEnum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDeviceStatus"
+    },
+    "index": null,
+    "value": [
+      "slRobotEntry",
+      8
+    ]
+  },
+  "slRobotCodeVer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slRobotEntry",
+      9
+    ]
+  },
+  "slRobotVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slRobotEntry",
+      10
+    ]
+  },
+  "slRobotFirmwareVer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slRobotEntry",
+      11
+    ]
+  },
+  "slRobotGetRetries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slRobotEntry",
+      12
+    ]
+  },
+  "slRobotPutRetries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slRobotEntry",
+      13
+    ]
+  },
+  "slRobotGetFails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slRobotEntry",
+      14
+    ]
+  },
+  "slRobotPutFails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slRobotEntry",
+      15
+    ]
+  },
+  "slRobotGetTotals": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slRobotEntry",
+      16
+    ]
+  },
+  "slRobotPutTotals": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slRobotEntry",
+      17
+    ]
+  },
+  "slElevatorCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      11
+    ]
+  },
+  "slElevatorTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLElevatorEntry"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      12
+    ]
+  },
+  "slElevatorEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLElevatorEntry"
+    },
+    "index": [
+      "slElevatorIndex"
+    ],
+    "value": [
+      "slElevatorTable",
+      1
+    ]
+  },
+  "SLElevatorEntry": {
+    "tp": "SEQUENCE"
+  },
+  "slElevatorIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slElevatorEntry",
+      1
+    ]
+  },
+  "slElevatorPhysicalAddressStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slElevatorEntry",
+      2
+    ]
+  },
+  "slElevatorPositionOn": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slElevatorEntry",
+      3
+    ]
+  },
+  "slElevatorHandCartStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slElevatorEntry",
+      4
+    ]
+  },
+  "slElevatorSerialNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slElevatorEntry",
+      5
+    ]
+  },
+  "slElevatorState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slElevatorEntry",
+      6
+    ]
+  },
+  "slElevatorFaultLED": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slElevatorEntry",
+      7
+    ]
+  },
+  "slElevatorStatusEnum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDeviceStatus"
+    },
+    "index": null,
+    "value": [
+      "slElevatorEntry",
+      8
+    ]
+  },
+  "slElevatorCodeVer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slElevatorEntry",
+      9
+    ]
+  },
+  "slElevatorVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slElevatorEntry",
+      10
+    ]
+  },
+  "slElevatorFirmwareVer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slElevatorEntry",
+      11
+    ]
+  },
+  "slElevatorGetRetries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slElevatorEntry",
+      12
+    ]
+  },
+  "slElevatorPutRetries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slElevatorEntry",
+      13
+    ]
+  },
+  "slElevatorGetFails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slElevatorEntry",
+      14
+    ]
+  },
+  "slElevatorPutFails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slElevatorEntry",
+      15
+    ]
+  },
+  "slElevatorGetTotals": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slElevatorEntry",
+      16
+    ]
+  },
+  "slElevatorPutTotals": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slElevatorEntry",
+      17
+    ]
+  },
+  "slControllerCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      13
+    ]
+  },
+  "slControllerTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLControllerEntry"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      14
+    ]
+  },
+  "slControllerEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLControllerEntry"
+    },
+    "index": [
+      "slControllerIndex"
+    ],
+    "value": [
+      "slControllerTable",
+      1
+    ]
+  },
+  "SLControllerEntry": {
+    "tp": "SEQUENCE"
+  },
+  "slControllerIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slControllerEntry",
+      1
+    ]
+  },
+  "slControllerPhysicalAddressStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slControllerEntry",
+      2
+    ]
+  },
+  "slControllerSerialNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slControllerEntry",
+      3
+    ]
+  },
+  "slControllerTopLevelCondition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlLibraryCondition"
+    },
+    "index": null,
+    "value": [
+      "slControllerEntry",
+      4
+    ]
+  },
+  "slControllerFaultLED": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slControllerEntry",
+      5
+    ]
+  },
+  "slControllerSafeToRemoveLED": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slControllerEntry",
+      6
+    ]
+  },
+  "slControllerStatusEnum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDeviceStatus"
+    },
+    "index": null,
+    "value": [
+      "slControllerEntry",
+      7
+    ]
+  },
+  "slControllerCodeVer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slControllerEntry",
+      8
+    ]
+  },
+  "slControllerVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slControllerEntry",
+      9
+    ]
+  },
+  "slControllerFirmwareVer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slControllerEntry",
+      10
+    ]
+  },
+  "slControllerHaState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlHaState"
+    },
+    "index": null,
+    "value": [
+      "slControllerEntry",
+      11
+    ]
+  },
+  "slControllerHaId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlHaId"
+    },
+    "index": null,
+    "value": [
+      "slControllerEntry",
+      12
+    ]
+  },
+  "slControllerHaSlot": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlHaSlot"
+    },
+    "index": null,
+    "value": [
+      "slControllerEntry",
+      13
+    ]
+  },
+  "slControllerHaAlternateIp": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slControllerEntry",
+      14
+    ]
+  },
+  "slControllerFru": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slControllerEntry",
+      15
+    ]
+  },
+  "slPtpCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      15
+    ]
+  },
+  "slPtpTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLPtpEntry"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      16
+    ]
+  },
+  "slPtpEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLPtpEntry"
+    },
+    "index": [
+      "slPtpIndex"
+    ],
+    "value": [
+      "slPtpTable",
+      1
+    ]
+  },
+  "SLPtpEntry": {
+    "tp": "SEQUENCE"
+  },
+  "slPtpIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPtpEntry",
+      1
+    ]
+  },
+  "slPtpPhysicalAddressStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slPtpEntry",
+      2
+    ]
+  },
+  "slPtpSerialNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPtpEntry",
+      3
+    ]
+  },
+  "slPtpState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slPtpEntry",
+      4
+    ]
+  },
+  "slPtpFaultLED": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPtpEntry",
+      5
+    ]
+  },
+  "slPtpStatusEnum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDeviceStatus"
+    },
+    "index": null,
+    "value": [
+      "slPtpEntry",
+      6
+    ]
+  },
+  "slPtpCodeVer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slPtpEntry",
+      7
+    ]
+  },
+  "slPtpVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slPtpEntry",
+      8
+    ]
+  },
+  "slPtpFirmwareVer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slPtpEntry",
+      9
+    ]
+  },
+  "slPtpMoveRetries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPtpEntry",
+      10
+    ]
+  },
+  "slPtpMoveFails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPtpEntry",
+      11
+    ]
+  },
+  "slPtpMoveTotals": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPtpEntry",
+      12
+    ]
+  },
+  "slDriveCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      17
+    ]
+  },
+  "slDriveTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLDriveEntry"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      18
+    ]
+  },
+  "slDriveEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLDriveEntry"
+    },
+    "index": [
+      "slDriveIndex"
+    ],
+    "value": [
+      "slDriveTable",
+      1
+    ]
+  },
+  "SLDriveEntry": {
+    "tp": "SEQUENCE"
+  },
+  "slDriveIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      1
+    ]
+  },
+  "slDriveHashedPhysAddr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      2
+    ]
+  },
+  "slDriveType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      3
+    ]
+  },
+  "slDriveVendor": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      4
+    ]
+  },
+  "slDriveSerialNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      5
+    ]
+  },
+  "slDriveInterfaceType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "scsi",
+        "3": "fibre",
+        "4": "sas",
+        "5": "other",
+        "6": "escon",
+        "7": "fcoe",
+        "8": "ficon",
+        "9": "iser-roce"
+      }
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      6
+    ]
+  },
+  "slDriveID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      7
+    ]
+  },
+  "slDriveState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      8
+    ]
+  },
+  "slDriveLED": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      9
+    ]
+  },
+  "slDriveStatusEnum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDriveStatus"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      10
+    ]
+  },
+  "slDriveCodeVer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      11
+    ]
+  },
+  "slDriveVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      12
+    ]
+  },
+  "slDriveGetRetries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      13
+    ]
+  },
+  "slDrivePutRetries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      14
+    ]
+  },
+  "slDriveCommandClean": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "enable",
+        "2": "cancel"
+      }
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      15
+    ]
+  },
+  "slDriveCellStatusEnum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "empty",
+        "3": "full"
+      }
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      16
+    ]
+  },
+  "slDriveCellStatusText": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      17
+    ]
+  },
+  "slDriveCellContentLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      18
+    ]
+  },
+  "slDriveCellContentType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      19
+    ]
+  },
+  "slDriveIdleSeconds": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      20
+    ]
+  },
+  "slDriveNumMounts": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      21
+    ]
+  },
+  "slDriveFibreNodeName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      22
+    ]
+  },
+  "slDriveFibrePortCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "single",
+        "2": "dual"
+      }
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      23
+    ]
+  },
+  "slDriveFibrePortAWWN": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      24
+    ]
+  },
+  "slDriveFibrePortAAddressingMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDriveFibreAddressing"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      25
+    ]
+  },
+  "slDriveFibrePortAPortEnabled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "disabled",
+        "2": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      26
+    ]
+  },
+  "slDriveFibrePortALoopId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDriveFibreLoopId"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      27
+    ]
+  },
+  "slDriveFibrePortAPortSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDriveFibreSpeed"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      28
+    ]
+  },
+  "slDriveFibrePortBWWN": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      29
+    ]
+  },
+  "slDriveFibrePortBAddressingMode": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDriveFibreAddressing"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      30
+    ]
+  },
+  "slDriveFibrePortBPortEnabled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "disabled",
+        "2": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      31
+    ]
+  },
+  "slDriveFibrePortBLoopId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDriveFibreLoopId"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      32
+    ]
+  },
+  "slDriveFibrePortBPortSpeed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDriveFibreSpeed"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      33
+    ]
+  },
+  "slDriveWWNEnabled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "disabled",
+        "2": "enabled"
+      }
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      34
+    ]
+  },
+  "slDrivePhysicalAddressStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      35
+    ]
+  },
+  "slDriveTraySerialNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      36
+    ]
+  },
+  "slDriveHealthStatusEnum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDeviceStatus"
+    },
+    "index": null,
+    "value": [
+      "slDriveEntry",
+      37
+    ]
+  },
+  "slCapCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      19
+    ]
+  },
+  "slCapTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLCapEntry"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      20
+    ]
+  },
+  "slCapEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLCapEntry"
+    },
+    "index": [
+      "slCapIndex"
+    ],
+    "value": [
+      "slCapTable",
+      1
+    ]
+  },
+  "SLCapEntry": {
+    "tp": "SEQUENCE"
+  },
+  "slCapIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      1
+    ]
+  },
+  "slCapPhysicalAddressStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      2
+    ]
+  },
+  "slCapAccessibility": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      3
+    ]
+  },
+  "slCapAccessStateEnum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "unknown",
+        "2": "open",
+        "3": "close"
+      }
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      4
+    ]
+  },
+  "slCapState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      5
+    ]
+  },
+  "slCapStatusEnum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDeviceStatus"
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      6
+    ]
+  },
+  "slCapName": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      7
+    ]
+  },
+  "slCapRotations": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      8
+    ]
+  },
+  "slCapRotationRetries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      9
+    ]
+  },
+  "slCapRotationFails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      10
+    ]
+  },
+  "slCapIPLs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      11
+    ]
+  },
+  "slCapSerialNumber": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      12
+    ]
+  },
+  "slCapCodeVer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      13
+    ]
+  },
+  "slCapVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      14
+    ]
+  },
+  "slCapFirmwareVer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      15
+    ]
+  },
+  "slCapReserved": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "false",
+        "1": "true"
+      }
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      16
+    ]
+  },
+  "slCapSize": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      17
+    ]
+  },
+  "slCapAddressRange": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      18
+    ]
+  },
+  "slCapUsageStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      19
+    ]
+  },
+  "slCapModeStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      20
+    ]
+  },
+  "slCapMagazineBits": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      21
+    ]
+  },
+  "slCapEnabled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "false",
+        "1": "true"
+      }
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      22
+    ]
+  },
+  "slCapSerialNumStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slCapEntry",
+      23
+    ]
+  },
+  "slTurntableCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      21
+    ]
+  },
+  "slTurntableTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLTurntableEntry"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      22
+    ]
+  },
+  "slTurntableEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLTurntableEntry"
+    },
+    "index": [
+      "slTurntableIndex"
+    ],
+    "value": [
+      "slTurntableTable",
+      1
+    ]
+  },
+  "SLTurntableEntry": {
+    "tp": "SEQUENCE"
+  },
+  "slTurntableIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slTurntableEntry",
+      1
+    ]
+  },
+  "slTurntablePhysicalAddressStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTurntableEntry",
+      2
+    ]
+  },
+  "slTurntablePosition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slTurntableEntry",
+      3
+    ]
+  },
+  "slTurntableHandCartStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slTurntableEntry",
+      4
+    ]
+  },
+  "slTurntableSerialNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slTurntableEntry",
+      5
+    ]
+  },
+  "slTurntableState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTurntableEntry",
+      6
+    ]
+  },
+  "slTurntableFaultLED": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slTurntableEntry",
+      7
+    ]
+  },
+  "slTurntableStatusEnum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlDeviceStatus"
+    },
+    "index": null,
+    "value": [
+      "slTurntableEntry",
+      8
+    ]
+  },
+  "slTurntableCodeVer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTurntableEntry",
+      9
+    ]
+  },
+  "slTurntableVersion": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTurntableEntry",
+      10
+    ]
+  },
+  "slTurntableFirmwareVer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTurntableEntry",
+      11
+    ]
+  },
+  "slTurntablesRotations": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slTurntableEntry",
+      12
+    ]
+  },
+  "slTurntablesRotationRetries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slTurntableEntry",
+      13
+    ]
+  },
+  "slTurntablesRotationFails": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slTurntableEntry",
+      14
+    ]
+  },
+  "slTurntablesIPLs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slTurntableEntry",
+      15
+    ]
+  },
+  "slSafetyDoorCenterCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      23
+    ]
+  },
+  "slSafetyDoorRetries": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      24
+    ]
+  },
+  "slSafetyDoorIPLs": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      25
+    ]
+  },
+  "slMVDriveCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      26
+    ]
+  },
+  "slMVDriveTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLMVDriveEntry"
+    },
+    "index": null,
+    "value": [
+      "slPhysHardware",
+      27
+    ]
+  },
+  "slMVDriveEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLMVDriveEntry"
+    },
+    "index": [
+      "slMVIndex"
+    ],
+    "value": [
+      "slMVDriveTable",
+      1
+    ]
+  },
+  "SLMVDriveEntry": {
+    "tp": "SEQUENCE"
+  },
+  "slMVIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slMVDriveEntry",
+      1
+    ]
+  },
+  "slMVDrivePhysicalAddressStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slMVDriveEntry",
+      2
+    ]
+  },
+  "slMVDriveType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slMVDriveEntry",
+      3
+    ]
+  },
+  "slMVDriveSerialNum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slMVDriveEntry",
+      4
+    ]
+  },
+  "slMVDriveState": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slMVDriveEntry",
+      5
+    ]
+  },
+  "slMVDriveCodeVer": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slMVDriveEntry",
+      6
+    ]
+  },
+  "slMVDriveCellStatusStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slMVDriveEntry",
+      7
+    ]
+  },
+  "slMVDriveCellContentLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slMVDriveEntry",
+      8
+    ]
+  },
+  "slMVReservationId": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slMVDriveEntry",
+      9
+    ]
+  },
+  "slMVTapeVolserLabelStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slMVDriveEntry",
+      10
+    ]
+  },
+  "slMVTypeEnum": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "0": "novalidation",
+        "1": "basicverify",
+        "2": "completeverifybOT",
+        "3": "completeverifyresume",
+        "4": "completeverifydivbot",
+        "5": "completeverifydivresume",
+        "6": "standardverify",
+        "7": "rebuildmir",
+        "8": "stop"
+      }
+    },
+    "index": null,
+    "value": [
+      "slMVDriveEntry",
+      11
+    ]
+  },
+  "slMVOriginatorStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slMVDriveEntry",
+      12
+    ]
+  },
+  "slMVStatusStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slMVDriveEntry",
+      13
+    ]
+  },
+  "slMVCompletionStatusStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slMVDriveEntry",
+      14
+    ]
+  },
+  "slMVErrorCodeStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slMVDriveEntry",
+      15
+    ]
+  },
+  "slCellCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slStorage",
+      1
+    ]
+  },
+  "slCellStorageFreeCells": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slStorage",
+      2
+    ]
+  },
+  "slCellStorageRestrictedFreeCells": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slStorage",
+      3
+    ]
+  },
+  "slCellTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLCellEntry"
+    },
+    "index": null,
+    "value": [
+      "slStorage",
+      4
+    ]
+  },
+  "slCellEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLCellEntry"
+    },
+    "index": [
+      "slCellIndex"
+    ],
+    "value": [
+      "slCellTable",
+      1
+    ]
+  },
+  "SLCellEntry": {
+    "tp": "SEQUENCE"
+  },
+  "slCellIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slCellEntry",
+      1
+    ]
+  },
+  "slCellElementID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slCellEntry",
+      2
+    ]
+  },
+  "slCellHostAccessible": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "true",
+        "2": "false"
+      }
+    },
+    "index": null,
+    "value": [
+      "slCellEntry",
+      3
+    ]
+  },
+  "slCellContentStatus": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slCellEntry",
+      4
+    ]
+  },
+  "slCellContentLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slCellEntry",
+      5
+    ]
+  },
+  "slCellContentType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slCellEntry",
+      6
+    ]
+  },
+  "slCellGetRetryCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slCellEntry",
+      7
+    ]
+  },
+  "slCellPutRetryCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slCellEntry",
+      8
+    ]
+  },
+  "slCellHostType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlCellHostTypeTC"
+    },
+    "index": null,
+    "value": [
+      "slCellEntry",
+      9
+    ]
+  },
+  "slCellPhysicalAddressStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slCellEntry",
+      10
+    ]
+  },
+  "slCellLogicalAddressStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slCellEntry",
+      11
+    ]
+  },
+  "slCellPartition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slCellEntry",
+      12
+    ]
+  },
+  "slCellPartitionType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlPartitionType"
+    },
+    "index": null,
+    "value": [
+      "slCellEntry",
+      13
+    ]
+  },
+  "slCellCapacityEnabled": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slCellEntry",
+      14
+    ]
+  },
+  "slCellCapacityAllowed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slStorage",
+      5
+    ]
+  },
+  "slCellCapacityUsed": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slStorage",
+      6
+    ]
+  },
+  "slTapeCount": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slInventory",
+      1
+    ]
+  },
+  "slTapeTable": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SEQUENCE OF SLTapeEntry"
+    },
+    "index": null,
+    "value": [
+      "slInventory",
+      2
+    ]
+  },
+  "slTapeEntry": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SLTapeEntry"
+    },
+    "index": [
+      "slTapeIndex"
+    ],
+    "value": [
+      "slTapeTable",
+      1
+    ]
+  },
+  "SLTapeEntry": {
+    "tp": "SEQUENCE"
+  },
+  "slTapeIndex": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slTapeEntry",
+      1
+    ]
+  },
+  "slTapeLabel": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTapeEntry",
+      2
+    ]
+  },
+  "slTapeType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTapeEntry",
+      3
+    ]
+  },
+  "slTapeLocationElementID": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slTapeEntry",
+      4
+    ]
+  },
+  "slTapeHostAccessible": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "INTEGER",
+      "values": {
+        "1": "true",
+        "2": "false"
+      }
+    },
+    "index": null,
+    "value": [
+      "slTapeEntry",
+      5
+    ]
+  },
+  "slTapePhysicalAddressStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTapeEntry",
+      6
+    ]
+  },
+  "slTapeLogicalAddressStr": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "OCTET STRING"
+    },
+    "index": null,
+    "value": [
+      "slTapeEntry",
+      7
+    ]
+  },
+  "slTapePartition": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "Integer32"
+    },
+    "index": null,
+    "value": [
+      "slTapeEntry",
+      8
+    ]
+  },
+  "slTapePartitionType": {
+    "tp": "OBJECT-TYPE",
+    "syntax": {
+      "tp": "SlPartitionType"
+    },
+    "index": null,
+    "value": [
+      "slTapeEntry",
+      9
+    ]
+  },
+  "slGroup": {
+    "tp": "OBJECT-GROUP",
+    "value": [
+      "slGroups",
+      2
+    ]
+  }
+}

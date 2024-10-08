@@ -26,6 +26,9 @@ docker build -t storagetek-probe . --no-cache
 ## Dry run
 
 Available checks:
+- `hardware`
+- `inventory`
+- `storage`
 - `storagetek`
 
 Create a yaml file, for example _(test.yaml)_:
