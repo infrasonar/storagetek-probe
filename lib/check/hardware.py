@@ -6,18 +6,12 @@ from ..snmpquery import snmpquery
 
 QUERIES = (
     MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slPhysHardware'],
-    MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slHostInterfaceEntry'],
-    MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slTempSensorEntry'],
-    MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slFanEntry'],
     MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slPowerSupplyEntry'],
     MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slRobotEntry'],
     MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slElevatorEntry'],
     MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slControllerEntry'],
-    MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slPtpEntry'],
     MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slDriveEntry'],
     MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slCapEntry'],
-    MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slTurntableEntry'],
-    MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slMVDriveEntry'],
 )
 
 
