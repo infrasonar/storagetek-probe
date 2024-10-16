@@ -11,23 +11,6 @@ QUERIES = (
     MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slLibDate'],
 )
 
-# patch mib object because translations are not properly
-# defined in the SYNTAX clause
-#
-# slDriveLED  OBJECT-TYPE
-#     SYNTAX  Integer32
-#     MAX-ACCESS  read-only
-#     STATUS current
-#     DESCRIPTION  "The drive's Tray LED sate (1=on,0=off)"
-# ::= { slDriveEntry 9 }
-MIB_INDEX[MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slDriveLED']]['syntax'] = {
-    'tp': 'INTEGER',
-    'values': {
-        0: 'off',
-        1: 'on'
-    },
-}
-
 
 async def check_storagetek(
         asset: Asset,
