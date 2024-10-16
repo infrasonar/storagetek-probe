@@ -26,8 +26,8 @@ QUERIES = (
 MIB_INDEX[MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slDriveLED']]['syntax'] = {
     'tp': 'INTEGER',
     'values': {
-        0: 'off',
-        1: 'on'
+        0: False,
+        1: True
     },
 }
 
