@@ -7,6 +7,7 @@ from lib.version import __version__ as version
 if __name__ == '__main__':
     checks = {
         'hardware': check_hardware,
+        'mediaEvent': check_media_event,
         'storagetek': check_storagetek,
 
     }
