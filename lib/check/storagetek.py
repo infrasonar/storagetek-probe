@@ -5,10 +5,10 @@ from ..snmpquery import snmpquery
 
 
 QUERIES = (
-    MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slLibrary'],
-    MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slLibVersion'],
-    MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slLibLocation'],
-    MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slLibDate'],
+    (MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slLibrary'], False),
+    (MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slLibVersion'], False),
+    (MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slLibLocation'], False),
+    (MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slLibDate'], False),
 )
 
 

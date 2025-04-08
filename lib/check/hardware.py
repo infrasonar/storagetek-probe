@@ -5,13 +5,13 @@ from ..snmpquery import snmpquery
 
 
 QUERIES = (
-    MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slPhysHardware'],
-    MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slPowerSupplyEntry'],
-    MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slRobotEntry'],
-    MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slElevatorEntry'],
-    MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slControllerEntry'],
-    MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slDriveEntry'],
-    MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slCapEntry'],
+    (MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slPhysHardware'], False),
+    (MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slPowerSupplyEntry'], True),
+    (MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slRobotEntry'], True),
+    (MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slElevatorEntry'], True),
+    (MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slControllerEntry'], True),
+    (MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slDriveEntry'], True),
+    (MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slCapEntry'], True),
 )
 
 # patch mib object because translations are not properly
