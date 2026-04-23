@@ -35,6 +35,7 @@ MIB_INDEX[MIB_INDEX['STREAMLINE-TAPE-LIBRARY-MIB']['slDriveLED']]['syntax'] = {
 
 class CheckHardware(Check):
     key = 'hardware'
+    unchanged_eol = 14400
 
     @staticmethod
     async def run(asset: Asset, local_config: dict, config: dict) -> dict:
